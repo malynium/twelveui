@@ -1,13 +1,15 @@
 {
   "name": "twelveui-npm",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "tw:build": "npx tailwindcss -o ./src/lib/tailwind.css --minify",
+    "tw:watch": "npx tailwindcss -o ./src/lib/tailwind.css --watch"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",

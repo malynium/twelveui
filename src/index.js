@@ -1,0 +1,1 @@
+export { default as NavMenu } from './lib/components/NavMenu/NavMenu.svelte'
