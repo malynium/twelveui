@@ -4,7 +4,7 @@ A svelte component library
 
 ## a11y
 
-- bake-in accessiblity
+- baked-in accessiblity
 - minimize the amount of a11y coding requirements for developers
 
 ## Install
