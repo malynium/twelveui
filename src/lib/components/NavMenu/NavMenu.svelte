@@ -8,7 +8,7 @@
     button,
     className = null, 
     clickListener = false,
-    currentIcon = MenuIcon, 
+    currentIcon, 
     expanded = false,
     menu, 
     mobilemenu, 
@@ -17,16 +17,22 @@
   export let 
     a_class = null,
     aria_label = 'navigation menu',
+    button_class = null,
+    closed_icon = null,
     icon_class = null,
     items = [],
     mobile_id = 'mobileitem',
     mobile_ul_class = null,
+    opened_icon = null,
     solid = false,
     ul_class = null
   ;
   export {className as class}
 
+  currentIcon = closed_icon ?? MenuIcon
+
   className = className ? `twelveui-flex twelveui-place-items-center ${className}` : `twelveui-flex twelveui-place-items-center`
+  button_class = button_class ? `twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer ${button_class}` : `twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer`
   a_class = a_class ? `twelveui-no-underline twelveui-inline-block twelveui-w-full twelveui-h-full ${a_class}` : `twelveui-no-underline twelveui-inline-block twelveui-w-full twelveui-h-full`
   mobile_ul_class = mobile_ul_class ? `twelveui-flex twelveui-flex-col twelveui-absolute !!twelveui-m-0 !!twelveui-p-0 ${mobile_ul_class}` : `twelveui-flex twelveui-flex-col twelveui-m-0 twelveui-p-0`
   ul_class = ul_class ? `twelveui-flex !!twelveui-m-0 !!twelveui-p-0 ${ul_class}` : `twelveui-flex twelveui-m-0 twelveui-p-0`
@@ -37,8 +43,8 @@
     }
     open = !open
     expanded = !expanded
+    if (opened_icon) currentIcon = closed_icon ?? MenuIcon
     await tick()
-    button.removeAttribute('aria-expanded')
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
   const toggleMenu = async () => {
@@ -47,8 +53,10 @@
     await tick()
     if (open) {
       mobilemenu.firstChild.firstChild.focus()
+      if (opened_icon) currentIcon = opened_icon
       document.documentElement.addEventListener('click', closeMenuOnOuterClick)
     } else {
+      if (opened_icon) currentIcon = closed_icon ?? MenuIcon
       document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
     }
     dispatch('click')
@@ -59,6 +67,7 @@
         if (open) {
           open = !open
           expanded = !expanded
+          if (opened_icon) currentIcon = closed_icon ?? MenuIcon
           button.focus()
           document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
         }
@@ -88,6 +97,7 @@
       case 'Escape':
         open = !open
         expanded = !expanded
+        if (opened_icon) currentIcon = closed_icon ?? MenuIcon
         button.focus()
         document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
         break;
@@ -117,7 +127,7 @@
           aria-controls={mobile_id}
           aria-haspopup='true'
           aria-expanded={expanded}
-          class='twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer'
+          class={button_class}
         >
           <svelte:component {solid} class={icon_class} this={currentIcon} />
         </button>
