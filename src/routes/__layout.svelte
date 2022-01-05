@@ -18,7 +18,7 @@
       icon_class="twelveui-h-8 twelveui-w-8 twelveui-text-white"
       item_class="twelveui-text-xl twelveui-text-white twelveui-indent-2 md:twelveui-px-2 md:twelveui-indent-0 hover:twelveui-bg-violet-400"
       list_class="twelveui-flex twelveui-space-x-8 twelveui-bg-violet-600"
-      mobile_list_class="twelveui-absolute twelveui-inset-x-0 twelveui-mt-4 twelveui-p-4 twelveui-bg-violet-600 twelveui-space-y-3"
+      mobile_list_class="twelveui-absolute twelveui-inset-x-0 twelveui-mt-8 twelveui-p-4 twelveui-bg-violet-600 twelveui-space-y-3"
     />
   </nav>
 </header>

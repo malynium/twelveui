@@ -26,9 +26,11 @@
 
   currentIcon = closed_icon ?? MenuIcon
 
-  button_class = button_class ? `twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer ${button_class}` : `twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer`
+  button_class = button_class ? `md:twelveui-hidden twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer ${button_class}` : `md:twelveui-hidden twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer`
   item_class = item_class ? `twelveui-no-underline twelveui-inline-block twelveui-w-full twelveui-h-full ${item_class}` : `twelveui-no-underline twelveui-inline-block twelveui-w-full twelveui-h-full`
-
+  list_class = list_class ? `<md:!twelveui-hidden ${list_class}` : `<md:!twelveui-hidden`
+  mobile_list_class = mobile_list_class ? `md:twelveui-hidden ${mobile_list_class}` : `md:twelveui-hidden`
+  
   const closeMenu = () => {
     open = !open
     expanded = !expanded
@@ -85,49 +87,44 @@
 </script>
 
 {#if items.length > 0}
-  <ul>
-    <li class='twelveui-hidden md:twelveui-flex twelveui-list-none'>
-      <ul class={list_class}>
+  <ul class={list_class}>
+    {#each items as item}
+      <li class='twelveui-list-none'>
+        <a class={item_class} href={item.href} rel={item.rel} target={item.target}>
+          {item.text}
+        </a>
+      </li>
+    {/each}
+  </ul>
+
+  <button
+    bind:this={button} 
+    on:click|stopPropagation={toggleMenu}
+    aria-controls={mobile_id}
+    aria-haspopup='true'
+    aria-expanded={expanded}
+    class={button_class}
+  >
+    <svelte:component {solid} class={icon_class} this={currentIcon} />
+  </button>
+  {#if open}
+    <div>
+      <ul bind:this={mobilemenu} class={mobile_list_class}>
         {#each items as item}
           <li class='twelveui-list-none'>
-            <a class={item_class} href={item.href} rel={item.rel} target={item.target}>
+            <a 
+              on:keyup={handleNavigation}
+              on:click={closeMenu}
+              class={item_class} 
+              href={item.href} 
+              rel={item.rel} 
+              target={item.target}
+            >
               {item.text}
             </a>
           </li>
         {/each}
       </ul>
-    </li>
-    <li class='twelveui-flex md:twelveui-hidden twelveui-items-center twelveui-list-none'>
-      <button
-        bind:this={button} 
-        on:click|stopPropagation={toggleMenu}
-        aria-controls={mobile_id}
-        aria-haspopup='true'
-        aria-expanded={expanded}
-        class={button_class}
-      >
-        <svelte:component {solid} class={icon_class} this={currentIcon} />
-      </button>
-    </li>
-    {#if open}
-      <li id={mobile_id} class='twelveui-list-none md:twelveui-hidden'>
-        <ul bind:this={mobilemenu} class={mobile_list_class}>
-          {#each items as item}
-            <li class='twelveui-list-none'>
-              <a 
-                on:keyup={handleNavigation}
-                on:click={closeMenu}
-                class={item_class} 
-                href={item.href} 
-                rel={item.rel} 
-                target={item.target}
-              >
-                {item.text}
-              </a>
-            </li>
-          {/each}
-        </ul>
-      </li>
-    {/if}
-  </ul>
+    </div>
+  {/if}
 {/if}
