@@ -1,9 +1,0 @@
-:where(.visited\:\!\!twelveui-text-current:visited) {
-  color: currentColor;
-}
-:where(\!\!.twelveui-m-0) {
-  margin: 0;
-}
-:where(\!\!.twelveui-p-0) {
-  padding: 0;
-}
