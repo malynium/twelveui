@@ -8,7 +8,8 @@
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "tw:watch": "npx tailwindcss -o ./src/lib/tailwind.css --watch"
+    "tw:watch": "npx tailwindcss -o ./src/lib/tailwind.css --watch",
+    "tw:build": "npx tailwindcss -o ./src/lib/tailwind.css --build"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
