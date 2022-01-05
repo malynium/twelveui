@@ -8,7 +8,6 @@
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "tw:build": "npx tailwindcss -o ./src/lib/tailwind.css --minify",
     "tw:watch": "npx tailwindcss -o ./src/lib/tailwind.css --watch"
   },
   "devDependencies": {

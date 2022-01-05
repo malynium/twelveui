@@ -2,3 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  button:focus, a:focus {
+    @apply twelveui-outline-none twelveui-ring;
+  }
+  button:focus-visible, a:focus-visible {
+    @apply !twelveui-outline-none
+  }
+}

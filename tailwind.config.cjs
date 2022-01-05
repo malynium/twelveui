@@ -1,6 +1,11 @@
 const config = {
   prefix: 'twelveui-',
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: [
+    './src/**/*.{html,js,svelte,ts}',
+  ],
+  corePlugins: {
+    preflight: false,
+  },
   theme: {
     extend: {},
   },
