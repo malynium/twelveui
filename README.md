@@ -9,6 +9,8 @@ A svelte component library
 
 ## Install
 
+Still in development. If you install, you won't get this version!
+
 ```
 // npm || pnpm || yarn
 npm i twelveui
