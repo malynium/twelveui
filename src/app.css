@@ -5,9 +5,9 @@
 
 @layer base {
   button:focus, a:focus {
-    @apply twelveui-outline-none twelveui-ring;
+    @apply outline-none ring;
   }
   button:focus-visible, a:focus-visible {
-    @apply !twelveui-outline-none
+    @apply !outline-none
   }
 }

@@ -1,13 +1,13 @@
 <script>
-  import '../../tailwind.css'
   import { createEventDispatcher, tick } from 'svelte'
-  import MenuIcon from '$lib/components/Icon/Heroicon/MenuIcon.svelte'
-  import XIcon from '$lib/components/Icon/Heroicon/XIcon.svelte'
+  import MenuIcon from '../Icon/Heroicon/MenuIcon.svelte'
+  import XIcon from '../Icon/Heroicon/XIcon.svelte'
   const dispatch = createEventDispatcher()
+
   let 
     button,
+    className = null,
     currentIcon, 
-    expanded = false,
     mobilemenu, 
     open = false
 
@@ -25,15 +25,9 @@
   ;
 
   currentIcon = closed_icon ?? MenuIcon
-
-  button_class = button_class ? `md:twelveui-hidden twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer ${button_class}` : `md:twelveui-hidden twelveui-border-0 twelveui-bg-inherit hover:twelveui-cursor-pointer`
-  item_class = item_class ? `twelveui-no-underline twelveui-inline-block twelveui-w-full twelveui-h-full ${item_class}` : `twelveui-no-underline twelveui-inline-block twelveui-w-full twelveui-h-full`
-  list_class = list_class ? `<md:!twelveui-hidden ${list_class}` : `<md:!twelveui-hidden`
-  mobile_list_class = mobile_list_class ? `md:twelveui-hidden ${mobile_list_class}` : `md:twelveui-hidden`
   
   const closeMenu = () => {
     open = !open
-    expanded = !expanded
     currentIcon = closed_icon
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
@@ -45,7 +39,6 @@
   }
   const toggleMenu = async () => {
     open = !open
-    expanded = !expanded
     await tick()
     if (open) {
       mobilemenu.firstChild.firstChild.focus()
@@ -86,10 +79,25 @@
   }
 </script>
 
+<style>
+  .twelveui-flex {
+    display: flex;
+  }
+  .twelveui-list-none {
+    list-style-type: none;
+  }
+  .twelveui-justify-center {
+    justify-content: center;
+  }
+  .twelveui-text-center {
+    text-align: center;
+  }
+</style>
+
 {#if items.length > 0}
   <ul class={list_class}>
     {#each items as item}
-      <li class='twelveui-list-none'>
+      <li class='twelveui-list-none twelveui-flex twelveui-justify-center'>
         <a class={item_class} href={item.href} rel={item.rel} target={item.target}>
           {item.text}
         </a>
@@ -102,7 +110,7 @@
     on:click|stopPropagation={toggleMenu}
     aria-controls={mobile_id}
     aria-haspopup='true'
-    aria-expanded={expanded}
+    aria-expanded={open}
     class={button_class}
   >
     <svelte:component {solid} class={icon_class} this={currentIcon} />
