@@ -6,7 +6,6 @@
 
   let 
     button,
-    className = null,
     currentIcon, 
     mobilemenu, 
     open = false
