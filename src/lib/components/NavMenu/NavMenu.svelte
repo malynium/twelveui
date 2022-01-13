@@ -23,7 +23,7 @@
     solid = false
   ;
 
-  currentIcon = closed_icon ?? MenuIcon
+  currentIcon = closed_icon
   
   const closeMenu = () => {
     open = !open
