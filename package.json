@@ -1,6 +1,6 @@
 {
   "name": "twelveui",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "allow-same-version": true,
   "scripts": {
     "dev": "svelte-kit dev",
