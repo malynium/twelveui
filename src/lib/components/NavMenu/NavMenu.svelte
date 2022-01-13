@@ -17,7 +17,7 @@
     item_class = null,
     items = [],
     list_class = null,
-    mobile_id = 'mobileitem',
+    mobile_id = 'mobilemenu',
     mobile_list_class = null,
     opened_icon = XIcon,
     solid = false
@@ -116,7 +116,7 @@
   </button>
   {#if open}
     <div>
-      <ul bind:this={mobilemenu} class={mobile_list_class}>
+      <ul bind:this={mobilemenu} id={mobile_id} class={mobile_list_class}>
         {#each items as item}
           <li class='twelveui-list-none'>
             <a 
