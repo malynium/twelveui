@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher, tick } from 'svelte'
   import MenuIcon from '../Icon/Heroicon/MenuIcon.svelte'
   import XIcon from '../Icon/Heroicon/XIcon.svelte'
@@ -11,16 +11,16 @@
     open = false
 
   export let 
-    button_class = null,
+    button_class: string = null,
     closed_icon = MenuIcon,
-    icon_class = null,
-    item_class = null,
+    icon_class: string = null,
+    item_class: string = null,
     items = [],
-    list_class = null,
-    mobile_id = 'mobilemenu',
-    mobile_list_class = null,
+    list_class: string = null,
+    mobile_id: string,
+    mobile_list_class: string = null,
     opened_icon = XIcon,
-    solid = false
+    solid: boolean = false
   ;
 
   currentIcon = closed_icon
