@@ -4,14 +4,15 @@
   import type { Icon } from '../../index.d'
   
   const dispatch = createEventDispatcher()
-  type link = {
+  type anchor = {
     href: string, id?: string, rel?: string, target?: string, text: string
   }
 
   let 
-    button,
-    currentIcon: new (options: any) => Icon, 
-    mobilemenu, 
+    first_menu_item: HTMLAnchorElement,
+    button: HTMLButtonElement,
+    current_icon: new (options: any) => Icon, 
+    mobile_menu: HTMLUListElement, 
     open = false
 
   export let 
@@ -19,7 +20,7 @@
     closed_icon: new (options: any) => Icon = MenuIcon,
     icon_class: string = null,
     item_class: string = null,
-    items: Array<link>,
+    items: Array<anchor>,
     list_class: string = null,
     mobile_id: string,
     mobile_list_class: string = null,
@@ -27,25 +28,25 @@
     solid: boolean = false
   ;
 
-  currentIcon = closed_icon
+  current_icon = closed_icon
   
   const closeMenu = () => {
     open = !open
-    currentIcon = closed_icon
+    current_icon = closed_icon
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
   const closeMenuOnOuterClick = (e) => {
-    if (!mobilemenu.contains(e.target as Node)) closeMenu()
+    if (!mobile_menu.contains(e.target as Node)) closeMenu()
   }
   const toggleMenu = async () => {
     open = !open
     await tick()
     if (open) {
-      mobilemenu.firstChild.firstChild.focus()
-      currentIcon = opened_icon
+      first_menu_item.focus()
+      current_icon = opened_icon
       document.documentElement.addEventListener('click', closeMenuOnOuterClick)
     } else {
-      currentIcon = closed_icon
+      current_icon = closed_icon
       button.focus()
       document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
     }
@@ -113,24 +114,40 @@
     aria-expanded={open}
     class={button_class}
   >
-    <svelte:component {solid} class={icon_class} this={currentIcon} />
+    <svelte:component {solid} class={icon_class} this={current_icon} />
   </button>
   {#if open}
     <div>
-      <ul bind:this={mobilemenu} id={mobile_id} class={mobile_list_class}>
+      <ul bind:this={mobile_menu} id={mobile_id} class={mobile_list_class}>
         {#each items as item}
-          <li class='twelveui-list-none'>
-            <a 
-              on:keyup={handleNavigation}
-              on:click={closeMenu}
-              class={item_class} 
-              href={item.href} 
-              rel={item.rel} 
-              target={item.target}
-            >
-              {item.text}
-            </a>
-          </li>
+          {#if item === items[0]}
+            <li class='twelveui-list-none'>
+              <a 
+                bind:this={first_menu_item}
+                on:keyup={handleNavigation}
+                on:click={closeMenu}
+                class={item_class} 
+                href={item.href} 
+                rel={item.rel} 
+                target={item.target}
+              >
+                {item.text}
+              </a>
+            </li>
+          {:else}
+            <li class='twelveui-list-none'>
+              <a 
+                on:keyup={handleNavigation}
+                on:click={closeMenu}
+                class={item_class} 
+                href={item.href} 
+                rel={item.rel} 
+                target={item.target}
+              >
+                {item.text}
+              </a>
+            </li>
+          {/if}
         {/each}
       </ul>
     </div>
