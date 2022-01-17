@@ -1,5 +1,5 @@
 <script>
-  let className 
+  let className = ''
   export let solid = false
   export { className as class }
   className = className ?? 'twelveui-h-6 twelveui-w-6'

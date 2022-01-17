@@ -1,6 +1,6 @@
 <script>
   import "../app.css"
-  import { NavMenu } from 'twelveui'
+  import { NavMenu, MenuIcon, XIcon } from '$lib'
   import items from '../data/navmenu.json'
 </script>
 
@@ -14,12 +14,12 @@
     class="flex place-items-center"
   >
     <NavMenu 
-      {items} 
+      {items}
       list_class="<md:!hidden flex space-x-8 p-0 bg-violet-600"
       button_class="border-0 bg-inherit md:hidden hover:cursor-pointer"
       icon_class="h-8 w-8 text-white"
       item_class="no-underline inline-block w-full h-full text-xl text-white indent-2 md:text-center md:px-1 md:indent-0 hover:bg-violet-400"
-      mobile_id="Mobile Menu"
+      mobile_id="mobile_menu"
       mobile_list_class="md:hidden absolute inset-x-0 space-y-3 mt-8 p-4 bg-violet-600"
     />
   </nav>

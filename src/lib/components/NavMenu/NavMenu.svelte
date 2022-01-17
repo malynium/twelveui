@@ -1,25 +1,29 @@
 <script lang="ts">
   import { createEventDispatcher, tick } from 'svelte'
-  import MenuIcon from '../Icon/Heroicon/MenuIcon.svelte'
-  import XIcon from '../Icon/Heroicon/XIcon.svelte'
+  import { MenuIcon, XIcon } from '../../index'
+  import type { Icon } from '../../index.d'
+  
   const dispatch = createEventDispatcher()
+  type link = {
+    href: string, id?: string, rel?: string, target?: string, text: string
+  }
 
   let 
     button,
-    currentIcon, 
+    currentIcon: new (options: any) => Icon, 
     mobilemenu, 
     open = false
 
   export let 
     button_class: string = null,
-    closed_icon = MenuIcon,
+    closed_icon: new (options: any) => Icon = MenuIcon,
     icon_class: string = null,
     item_class: string = null,
-    items = [],
+    items: Array<link>,
     list_class: string = null,
     mobile_id: string,
     mobile_list_class: string = null,
-    opened_icon = XIcon,
+    opened_icon: new (options: any) => Icon = XIcon,
     solid: boolean = false
   ;
 
@@ -30,11 +34,8 @@
     currentIcon = closed_icon
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
-  const closeMenuOnOuterClick = async (e) => {
-    if (e.composedPath().some(elem => elem.id === mobile_id)) {
-      return
-    }
-    closeMenu()
+  const closeMenuOnOuterClick = (e) => {
+    if (!mobilemenu.contains(e.target as Node)) closeMenu()
   }
   const toggleMenu = async () => {
     open = !open
