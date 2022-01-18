@@ -34,14 +34,14 @@
     current_icon = closed_icon
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
-  const closeMenuOnOuterClick = (e) => {
+  const closeMenuOnOuterClick = (e: PointerEvent) => {
     if (!mobile_menu.contains(e.target as Node)) closeMenu()
   }
   const toggleMenu = async () => {
     open = !open
     await tick()
     if (open) {
-      (mobile_menu.firstElementChild.firstElementChild as HTMLAnchorElement).focus();
+      (mobile_menu.firstElementChild.firstElementChild as HTMLAnchorElement).focus()
       current_icon = opened_icon
       document.documentElement.addEventListener('click', closeMenuOnOuterClick)
     } else {
@@ -51,23 +51,24 @@
     }
     dispatch('click')
   }
-  const handleNavigation = (e) => {
+  const handleNavigation = (e: KeyboardEvent) => {
+    const parent = (<HTMLElement>(<HTMLElement>e.target).parentNode)
     switch (e.key) {
       case 'ArrowDown':
-        if (e.target.parentNode.nextElementSibling) {
-          const nextItem = e.target.parentNode.nextElementSibling.firstChild
+        if (parent.nextElementSibling) {
+          const nextItem = (parent.nextElementSibling.firstElementChild as HTMLElement)
           nextItem.focus()
         } else {
-          const firstItem = e.target.parentNode.parentNode.firstChild.firstChild
+          const firstItem = (parent.parentNode.firstChild.firstChild as HTMLElement)
           firstItem.focus()
         }
         break
       case 'ArrowUp':
-        if (e.target.parentNode.previousElementSibling) {
-          const previousItem = e.target.parentNode.previousElementSibling.firstChild
+        if (parent.previousElementSibling) {
+          const previousItem = (parent.previousElementSibling.firstChild as HTMLElement)
           previousItem.focus()
         } else {
-          const lastItem = e.target.parentNode.parentNode.lastChild.firstChild
+          const lastItem = (parent.parentNode.lastChild.firstChild as HTMLElement)
           lastItem.focus()
         }
         break

@@ -1,6 +1,6 @@
 <script>
   import "../app.css"
-  import { NavMenu, MenuIcon, XIcon } from '$lib'
+  import { NavMenu } from '$lib'
   import items from '../data/navmenu.json'
 </script>
 
