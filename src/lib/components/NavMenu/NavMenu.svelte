@@ -9,7 +9,6 @@
   }
 
   let 
-    first_menu_item: HTMLAnchorElement,
     button: HTMLButtonElement,
     current_icon: new (options: any) => Icon, 
     mobile_menu: HTMLUListElement, 
@@ -42,7 +41,7 @@
     open = !open
     await tick()
     if (open) {
-      first_menu_item.focus()
+      (mobile_menu.firstElementChild.firstElementChild as HTMLAnchorElement).focus();
       current_icon = opened_icon
       document.documentElement.addEventListener('click', closeMenuOnOuterClick)
     } else {
@@ -120,34 +119,18 @@
     <div>
       <ul bind:this={mobile_menu} id={mobile_id} class={mobile_list_class}>
         {#each items as item}
-          {#if item === items[0]}
-            <li class='twelveui-list-none'>
-              <a 
-                bind:this={first_menu_item}
-                on:keyup={handleNavigation}
-                on:click={closeMenu}
-                class={item_class} 
-                href={item.href} 
-                rel={item.rel} 
-                target={item.target}
-              >
-                {item.text}
-              </a>
-            </li>
-          {:else}
-            <li class='twelveui-list-none'>
-              <a 
-                on:keyup={handleNavigation}
-                on:click={closeMenu}
-                class={item_class} 
-                href={item.href} 
-                rel={item.rel} 
-                target={item.target}
-              >
-                {item.text}
-              </a>
-            </li>
-          {/if}
+          <li class='twelveui-list-none'>
+            <a 
+              on:keyup={handleNavigation}
+              on:click={closeMenu}
+              class={item_class} 
+              href={item.href} 
+              rel={item.rel} 
+              target={item.target}
+            >
+              {item.text}
+            </a>
+          </li>
         {/each}
       </ul>
     </div>
