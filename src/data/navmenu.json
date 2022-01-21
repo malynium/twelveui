@@ -1,18 +1,6 @@
 [
   {
-    "text": "Home",
-    "href": "/"
-  },
-  {
-    "text": "Products",
-    "href": "/products"
-  },
-  {
-    "text": "Services",
-    "href": "/services"
-  },
-  {
-    "text": "About",
-    "href": "/about"
+    "text": "Docs",
+    "href": "/docs"
   }
 ]

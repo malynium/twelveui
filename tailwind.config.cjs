@@ -2,9 +2,6 @@ const config = {
   content: [
     './src/**/*.{html,js,svelte,ts}',
   ],
-  corePlugins: {
-    preflight: false,
-  },
   theme: {
     extend: {
       screens: {
@@ -16,7 +13,9 @@ const config = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('twelvecss')
+  ],
 };
 
 module.exports = config;
