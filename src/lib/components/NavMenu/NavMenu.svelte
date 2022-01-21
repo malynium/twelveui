@@ -24,7 +24,7 @@
     mobile_id: string,
     mobile_list_class: string = null,
     opened_icon: new (options: any) => Icon = XIcon,
-    solid: boolean = false
+    solid = false
   ;
 
   current_icon = closed_icon

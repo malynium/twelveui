@@ -1,7 +1,7 @@
 <script>
   import "../app.css"
-  import { NavMenu } from '$lib'
-  import items from '../data/navmenu.json'
+  import { NavMenu } from 'twelveui'
+  import navItems from '../data/navmenu.json'
 </script>
 
 <header class="flex justify-around h-14 bg-violet-600">
@@ -14,7 +14,7 @@
     class="flex place-items-center"
   >
     <NavMenu 
-      {items}
+      items={navItems}
       list_class="<md:!hidden flex space-x-8 p-0 bg-violet-600"
       button_class="border-0 bg-inherit md:hidden hover:cursor-pointer"
       icon_class="h-8 w-8 text-white"
