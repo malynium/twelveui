@@ -1,0 +1,78 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-684750ae.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/index.svelte",
+      "src/routes/docs/index.svelte",
+      "src/routes/docs/components/navmenu.svelte",
+      "src/routes/[slug].svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-d83199a5.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-f1f2dbc8.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-aab875a5.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-6220c806.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ]
+  },
+  "src/routes/docs/index.svelte": {
+    "file": "pages/docs/index.svelte-85341d10.js",
+    "src": "src/routes/docs/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ]
+  },
+  "src/routes/docs/components/navmenu.svelte": {
+    "file": "pages/docs/components/navmenu.svelte-0b1c0bb0.js",
+    "src": "src/routes/docs/components/navmenu.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ]
+  },
+  "src/routes/[slug].svelte": {
+    "file": "pages/_slug_.svelte-07c50568.js",
+    "src": "src/routes/[slug].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-7885619b.js"
+    ]
+  },
+  "_vendor-7885619b.js": {
+    "file": "chunks/vendor-7885619b.js"
+  }
+}
