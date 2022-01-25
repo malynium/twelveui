@@ -32,6 +32,7 @@
   const closeMenu = () => {
     open = !open
     current_icon = closed_icon
+    button.focus()
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
   const closeMenuOnOuterClick = (e: PointerEvent) => {
@@ -74,7 +75,6 @@
         break
       case 'Escape':
         closeMenu()
-        button.focus()
         break;
     }
   }

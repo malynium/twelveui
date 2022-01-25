@@ -4,14 +4,14 @@
   import navItems from '../data/navmenu.json'
 </script>
 
-<header class="flex justify-between md:justify-around h-14 border-gray-300 border-b-2">
-  <div class="flex place-items-center ml-8 text-gray-900">
-    <h1 class="m-0 text-3xl"><a href="/">twelveui</a></h1>
+<header class="mx-4 md:mx-8 lg:mx-24 xl:mx-40 flex justify-between h-14">
+  <div class="flex place-items-center">
+    <p class="text-3xl"><a href="/">twelveui</a></p>
   </div>
 
   <nav 
-    aria-label="TwelveUI Navigation Menu"
-    class="flex place-items-center mr-8"
+    aria-label="Navigation Menu"
+    class="flex place-items-center"
   >
     <NavMenu 
       items={navItems}
