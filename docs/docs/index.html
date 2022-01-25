@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="An accessible Svelte component library" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>TwelveUI</title>
+		
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-f1f2dbc8.css">
+	<link rel="modulepreload" href="/_app/start-d92f56de.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-fb9ac8b5.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-e954196b.js">
+	<link rel="modulepreload" href="/_app/pages/docs/index.svelte-c20408e5.js">
+			<script type="module">
+				import { start } from "/_app/start-d92f56de.js";
+				start({
+					target: document.querySelector("#svelte"),
+					paths: {"base":"","assets":""},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/_app/pages/__layout.svelte-e954196b.js"),
+						import("/_app/pages/docs/index.svelte-c20408e5.js")
+						],
+						url: new URL("http://sveltekit-prerender/docs"),
+						params: {}
+					}
+				});
+			</script>
+	</head>
+	<body class="text-gray-900">
+		<div id="svelte">
+
+
+<header class="mx-4 md:mx-8 lg:mx-24 xl:mx-40 flex justify-between h-14"><div class="flex place-items-center"><p class="text-3xl"><a href="/">twelveui</a></p></div>
+
+  <nav aria-label="Navigation Menu" class="flex place-items-center"><ul class="&lt;md:!hidden flex space-x-8 p-0 svelte-2ac3l1"><li class="twelveui-list-none twelveui-flex twelveui-justify-center svelte-2ac3l1"><a class="no-underline inline-block w-full h-full text-xl text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100 svelte-2ac3l1" href="/docs">Docs</a>
+      </li></ul>
+
+  <button aria-controls="mobile_menu" aria-haspopup="true" aria-expanded="false" class="border-0 bg-inherit md:hidden hover:cursor-pointer svelte-2ac3l1"><svg tabindex="-1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600 svelte-1lr9gbd" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="navigation menu icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+  </nav></header>
+<main class="mx-4 md:max-w-screen-md"><h2 class="mb-2 h3">Installation</h2>
+  <pre class="block p-4 bg-gray-700 text-white rounded-xl"># npm install twelveui
+  </pre>
+  <h2 class="mb-2 h3">Usage Example</h2>
+  <pre class="block p-4 bg-gray-700 text-white rounded-xl overflow-auto">&lt;script&gt;
+  import { NavMenu, MenuIcon } from &#39;twelveui&#39;  
+&lt;/script&gt;
+  </pre>
+  <h2 class="h3">Components</h2>
+  <section><h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Disclosure</h3>
+    <dl><dt class="p mt-2 text-blue-600"><a href="docs/components/navmenu">NavMenu</a></dt><dd class="ml-4">A series of links, which are aligned horizontally by default. When you provide &quot;mobile&quot; classes, the menu collapses and is shown/hidden by icons. The default &quot;closed&quot; icon is a three-line hamburger. The default &quot;opened&quot; icon is an X.</dd></dl></section></main>
+
+</div>
+	</body>
+</html>
