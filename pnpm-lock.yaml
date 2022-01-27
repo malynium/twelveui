@@ -1,12 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@sveltejs/adapter-static': 1.0.0-next.26
   '@sveltejs/kit': 1.0.0-next.241
   autoprefixer: ^10.4.0
   cssnano: 5.0.14
   postcss: 8.4.5
   svelte: ^3.46.2
+  svelte-adapter-github: 0.0.1-next.0
   svelte-check: ^2.2.6
   svelte-preprocess: ^4.10.1
   svelte2tsx: 0.4.12
@@ -16,12 +16,12 @@ specifiers:
   typescript: ^4.4.3
 
 devDependencies:
-  '@sveltejs/adapter-static': 1.0.0-next.26
   '@sveltejs/kit': 1.0.0-next.241_svelte@3.46.2
   autoprefixer: 10.4.1_postcss@8.4.5
   cssnano: 5.0.14_postcss@8.4.5
   postcss: 8.4.5
   svelte: 3.46.2
+  svelte-adapter-github: 0.0.1-next.0
   svelte-check: 2.2.11_postcss@8.4.5+svelte@3.46.2
   svelte-preprocess: 4.10.1_5d588ad3d91b95d3cbe331494e3b22d9
   svelte2tsx: 0.4.12_svelte@3.46.2+typescript@4.5.4
@@ -80,12 +80,6 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
-    dev: true
-
-  /@sveltejs/adapter-static/1.0.0-next.26:
-    resolution: {integrity: sha512-LXR0HkPygZ+m9wJhFqbYWbJ0jquhgUK6vL/8AwnqbAZGGtQFloMpf49WOANk7MiLBeY6L97W5jPLSxHiDW3T0Q==}
-    dependencies:
-      tiny-glob: 0.2.9
     dev: true
 
   /@sveltejs/kit/1.0.0-next.241_svelte@3.46.2:
@@ -1559,6 +1553,12 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /svelte-adapter-github/0.0.1-next.0:
+    resolution: {integrity: sha512-oJDbB3+t/7mw+UQbV8PvgPN6S0ZaawHmF3q073IzW3VQh/ILLfWTtEFUXv0vZgaRQoN9uc3b0k1oY1F1CvN96A==}
+    dependencies:
+      tiny-glob: 0.2.9
     dev: true
 
   /svelte-check/2.2.11_postcss@8.4.5+svelte@3.46.2:
