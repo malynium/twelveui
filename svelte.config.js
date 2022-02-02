@@ -1,4 +1,5 @@
-import adapter from "svelte-adapter-github";
+//import adapter from "svelte-adapter-github";
+import adapter from "@sveltejs/adapter-static";
 import path from 'path';
 import preprocess from "svelte-preprocess";
 
@@ -14,7 +15,8 @@ export default {
 
   kit: {
     adapter: adapter({
-      domain: 'twelveui.com'
+      pages: 'docs',
+      assets: 'docs'
     }),
 
     // hydrate the <div id="svelte"> element in src/app.html
