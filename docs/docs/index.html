@@ -6,33 +6,32 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>TwelveUI</title>
-		
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-f1f2dbc8.css">
-	<link rel="modulepreload" href="/_app/start-d92f56de.js">
-	<link rel="modulepreload" href="/_app/chunks/vendor-fb9ac8b5.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-e954196b.js">
-	<link rel="modulepreload" href="/_app/pages/docs/index.svelte-c20408e5.js">
-			<script type="module">
-				import { start } from "/_app/start-d92f56de.js";
-				start({
-					target: document.querySelector("#svelte"),
-					paths: {"base":"","assets":""},
-					session: {},
-					route: true,
-					spa: false,
-					trailing_slash: "never",
-					hydrate: {
-						status: 200,
-						error: null,
-						nodes: [
-							import("/_app/pages/__layout.svelte-e954196b.js"),
-						import("/_app/pages/docs/index.svelte-c20408e5.js")
-						],
-						url: new URL("http://sveltekit-prerender/docs"),
-						params: {}
-					}
-				});
-			</script>
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-d0776911.css">
+	<link rel="modulepreload" href="/_app/start-7e04a722.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-3a12896c.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-77f11e83.js">
+	<link rel="modulepreload" href="/_app/pages/docs/index.svelte-f7643e1d.js"><script type="module">
+		import { start } from "/_app/start-7e04a722.js";
+		start({
+			target: document.querySelector("#svelte"),
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-77f11e83.js"),
+						import("/_app/pages/docs/index.svelte-f7643e1d.js")
+				],
+				url: new URL("http://sveltekit-prerender/docs"),
+				params: {}
+			}
+		});
+	</script>
 	</head>
 	<body class="text-gray-900">
 		<div id="svelte">
