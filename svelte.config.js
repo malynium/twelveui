@@ -24,6 +24,11 @@ export default {
         alias: {
           'twelveui': path.resolve('src/lib/')
         }
+      },
+      server: {
+        fs: {
+          allow: ['.']
+        }
       }
     }
   }
