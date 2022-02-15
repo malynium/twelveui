@@ -38,7 +38,6 @@
     let checked = toggle.getAttribute("aria-checked") === "true"
     value = !checked
     toggle.setAttribute("aria-checked", value.toString())
-    console.log('clicked')
     dispatch('click')
   }
   const KeyUp = (e) => {

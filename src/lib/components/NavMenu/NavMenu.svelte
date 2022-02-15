@@ -15,14 +15,14 @@
     open = false
 
   export let 
-    button_class: string = null,
+    button_class: string = undefined,
     closed_icon: new (options: any) => Icon = MenuIcon,
-    icon_class: string = null,
-    item_class: string = null,
+    icon_class: string = undefined,
+    item_class: string = undefined,
     items: Array<anchor>,
-    list_class: string = null,
+    list_class: string = undefined,
     mobile_id: string,
-    mobile_list_class: string = null,
+    mobile_list_class: string = undefined,
     opened_icon: new (options: any) => Icon = XIcon,
     solid = false
   ;
