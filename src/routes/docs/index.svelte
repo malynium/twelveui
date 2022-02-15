@@ -23,14 +23,14 @@ import &lbrace; NavMenu, MenuIcon &rbrace; from 'twelveui'
 <section>
   <h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Disclosure</h3>
   <dl>
-    <dt class="p mt-2 text-blue-600"><a href="docs/components/navmenu">NavMenu</a></dt>
+    <dt class="p mt-2 text-blue-600"><a href="components/navmenu">NavMenu</a></dt>
     <dd class="ml-4">A series of links, which are aligned horizontally by default. When you provide "mobile" classes, the menu collapses and is shown/hidden by icons. The default "closed" icon is a three-line hamburger. The default "opened" icon is an X.</dd>
   </dl>
 </section>
 <section>
   <h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Input</h3>
   <dl>
-    <dt class="p mt-2 text-blue-600"><a href="docs/components/switch">Switch</a></dt>
+    <dt class="p mt-2 text-blue-600"><a href="components/switch">Switch</a></dt>
     <dd class="ml-4">A pill shaped button, which switches between 'on' and 'off' states.</dd>
   </dl>
   <Switch 
