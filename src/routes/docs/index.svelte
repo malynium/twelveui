@@ -1,6 +1,6 @@
 <script>
   import { Switch } from 'twelveui'
-  let cookies
+  let enabled = true
 </script>
 
 <style>
@@ -34,11 +34,19 @@ import &lbrace; NavMenu, MenuIcon &rbrace; from 'twelveui'
     <dd class="ml-4">A pill shaped button, which switches between 'on' and 'off' states.</dd>
   </dl>
   <Switch 
+    bind:checked={enabled}
     label="Cookies"
-    label_class="w-[230px] box-content inline-flex space-x-3 items-center p-1 m-6 rounded-md outline-none text-gray-800 hover:m-[22px] hover:cursor-pointer hover:border-2 hover:bg-blue-200 hover:border-blue-500 focus:m-[22px] focus:border-2 focus:bg-blue-200 focus:border-blue-500" 
+    label_class="w-[200px] box-content inline-flex space-x-3 items-center p-1 m-6 rounded-md outline-none text-gray-800 hover:m-[22px] hover:cursor-pointer hover:border-2 hover:bg-blue-200 hover:border-blue-500 focus:m-[22px] focus:border-2 focus:bg-blue-200 focus:border-blue-500" 
     state_class="text-sm text-gray-700"
-    switcher_on_class="bg-pink-600"
     state_off="Disabled"
     state_on="Enabled"
+    switcher_on_class="bg-pink-600"
   />
+  <p class="ml-4 mb-8">
+    {#if enabled}
+      Cookies are enabled
+    {:else}
+      Cookies are disabled
+    {/if}
+  </p>
 </section>

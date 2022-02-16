@@ -30,15 +30,14 @@
     switcher_class = '!!twelveui-bg-black',
     switcher_off_class= '',
     switcher_on_class = '',
-    value = false;
+    checked = false;
 
   const space = / /ig;
   let id: string = label.replace(space, '_').toLowerCase()
 
   const Toggle = () => {
-    let checked = toggle.getAttribute("aria-checked") === "true"
-    value = !checked
-    toggle.setAttribute("aria-checked", value.toString())
+    checked = !(toggle.getAttribute("aria-checked") === "true")
+    toggle.setAttribute("aria-checked", checked.toString())
     dispatch('click')
   }
   const KeyUp = (e) => {
@@ -66,19 +65,19 @@
       break;
   }
 
-  arias['aria-checked'] = value
+  arias['aria-checked'] = checked
 </script>
 
 <label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-switch-ring relative {label_class}" for={id}>
   {label}
   <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} type="checkbox" role="switch" {id} {...arias} class="cursor-pointer h-full w-full absolute top-0 left-0 opacity-[.0001]" />
   <span aria-hidden="true"
-    class="{switchW} {switchH} {bg_class} {value ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {className}">
+    class="{switchW} {switchH} {bg_class} {checked ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {className}">
     <span
-      class="{switcherW} {switcherH} {top} {left} {switcher_class} {value ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} transition ease-in-out duration-300 rounded-full absolute">
+      class="{switcherW} {switcherH} {top} {left} {switcher_class} {checked ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} transition ease-in-out duration-300 rounded-full absolute">
     </span>
   </span>
   {#if state_on || state_off}
-  <span aria-hidden="true" class="{state_class}">{value ? state_on : state_off}</span>
+  <span aria-hidden="true" class="{state_class}">{checked ? state_on : state_off}</span>
   {/if}
 </label>
