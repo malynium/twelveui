@@ -13,7 +13,7 @@
     switcherW = 'w-5',
     left = 'left-0.5',
     top = 'top-0.5',
-    toggle: HTMLSpanElement,
+    toggle: HTMLInputElement,
     translate = 'translate-x-6'
   
   export { className as class }
@@ -21,16 +21,17 @@
     bg_class = '',
     bg_off_class = '', 
     bg_on_class = '',
+    checked = false,
     label: string,
-    label_class = '',
     size = 'md',
     state_class = '',
     state_off: string = undefined,
     state_on: string = undefined,
+    switch_class = '',
     switcher_class = '!!twelveui-bg-black',
     switcher_off_class= '',
     switcher_on_class = '',
-    checked = false;
+    value: string;
 
   const space = / /ig;
   let id: string = label.replace(space, '_').toLowerCase()
@@ -38,6 +39,7 @@
   const Toggle = () => {
     checked = !(toggle.getAttribute("aria-checked") === "true")
     toggle.setAttribute("aria-checked", checked.toString())
+    checked ? toggle.checked = true : toggle.checked = false
     dispatch('click')
   }
   const KeyUp = (e) => {
@@ -68,11 +70,11 @@
   arias['aria-checked'] = checked
 </script>
 
-<label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-switch-ring relative {label_class}" for={id}>
+<label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-switch-ring relative {className}">
   {label}
-  <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} type="checkbox" role="switch" {id} {...arias} class="cursor-pointer h-full w-full absolute top-0 left-0 opacity-[.0001]" />
+  <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} {value} type="checkbox" role="switch" {id} {...arias} class="cursor-pointer h-full w-full absolute top-0 left-0 opacity-[.0001]" />
   <span aria-hidden="true"
-    class="{switchW} {switchH} {bg_class} {checked ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {className}">
+    class="{switchW} {switchH} {bg_class} {checked ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {switch_class}">
     <span
       class="{switcherW} {switcherH} {top} {left} {switcher_class} {checked ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} transition ease-in-out duration-300 rounded-full absolute">
     </span>
