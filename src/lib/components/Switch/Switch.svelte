@@ -69,13 +69,13 @@
   arias['aria-checked'] = value
 </script>
 
-<label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-switch-ring block relative {label_class}" for={id}>
+<label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-switch-ring relative {label_class}" for={id}>
   {label}
   <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} type="checkbox" role="switch" {id} {...arias} class="cursor-pointer h-full w-full absolute top-0 left-0 opacity-[.0001]" />
   <span aria-hidden="true"
     class="{switchW} {switchH} {bg_class} {value ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {className}">
     <span
-      class="{switcherW} {switcherH} {top} {left} {switcher_class} {value ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} rounded-full absolute">
+      class="{switcherW} {switcherH} {top} {left} {switcher_class} {value ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} transition ease-in-out duration-300 rounded-full absolute">
     </span>
   </span>
   {#if state_on || state_off}
