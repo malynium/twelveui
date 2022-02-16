@@ -38,5 +38,7 @@ import &lbrace; NavMenu, MenuIcon &rbrace; from 'twelveui'
     label_class="w-[230px] box-content inline-flex space-x-3 items-center p-1 m-6 rounded-md outline-none text-gray-800 hover:m-[22px] hover:cursor-pointer hover:border-2 hover:bg-blue-200 hover:border-blue-500 focus:m-[22px] focus:border-2 focus:bg-blue-200 focus:border-blue-500" 
     state_class="text-sm text-gray-700"
     switcher_on_class="bg-pink-600"
+    state_off="Disabled"
+    state_on="Enabled"
   />
 </section>
