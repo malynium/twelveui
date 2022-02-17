@@ -91,9 +91,6 @@
   .twelveui-justify-center {
     justify-content: center;
   }
-  .twelveui-text-center {
-    text-align: center;
-  }
 </style>
 
 {#if items.length > 0}
