@@ -13,16 +13,17 @@
     current_icon: new (options: any) => Icon, 
     mobile_menu: HTMLUListElement, 
     open = false
+  ;
 
   export let 
-    button_class: string = undefined,
+    button_class = '',
     closed_icon: new (options: any) => Icon = MenuIcon,
-    icon_class: string = undefined,
-    item_class: string = undefined,
+    icon_class = '',
+    item_class = '',
     items: Array<anchor>,
-    list_class: string = undefined,
+    list_class = '',
     mobile_id: string,
-    mobile_list_class: string = undefined,
+    mobile_list_class = '',
     opened_icon: new (options: any) => Icon = XIcon,
     solid = false
   ;
