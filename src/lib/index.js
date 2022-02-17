@@ -1,3 +1,4 @@
+export { default as Button } from './components/Button/Button.svelte'
 export { default as NavMenu } from './components/NavMenu/NavMenu.svelte'
 export { default as MenuIcon } from './components/Icon/Heroicon/MenuIcon.svelte'
 export { default as Switch } from './components/Switch/Switch.svelte'

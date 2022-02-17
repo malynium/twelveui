@@ -1,5 +1,6 @@
 <script>
-  import { Switch } from 'twelveui'
+  import { Button, NavMenu, Switch, XIcon } from 'twelveui'
+  import navItems from '../../data/navmenu_docs.json'
 </script>
 
 <style>
@@ -14,14 +15,38 @@
 </pre>
 <h2 class="h3">Components</h2>
 <section>
-  <h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Disclosure</h3>
+  <dl>
+    <dt class="p mt-2 text-blue-600"><a href="docs/components/button">Button</a></dt>
+    <dd class="ml-4">It's a button! Pass in an `icon` prop, as a svelte component - along with classes via the `icon_class` prop.</dd>
+  </dl>
+  <Button 
+    class="button-md button-blue-600 rounded-lg m-6"
+    icon={XIcon}
+    icon_class="h-6 w-6 ml-4"
+    text="Hello There World"
+  />
+</section>
+<section>
   <dl>
     <dt class="p mt-2 text-blue-600"><a href="docs/components/navmenu">NavMenu</a></dt>
     <dd class="ml-4">A series of links, which are aligned horizontally by default. When you provide "mobile" classes, the menu collapses and is shown/hidden by icons. The default "closed" icon is a three-line hamburger. The default "opened" icon is an X.</dd>
   </dl>
+  <nav 
+    aria-label="Navigation Menu"
+    class="flex m-6"
+  >
+    <NavMenu 
+      items={navItems}
+      list_class="<md:!hidden flex space-x-8 p-0"
+      button_class="border-0 bg-inherit md:hidden hover:cursor-pointer"
+      icon_class="h-8 w-8 text-gray-600"
+      item_class="no-underline inline-block w-full h-full text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100"
+      mobile_id="docs_mobile_nav"
+      mobile_list_class="md:hidden absolute inset-x-0 space-y-3 mt-8 p-4 bg-gray-50"
+    />
+  </nav>
 </section>
 <section>
-  <h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Input</h3>
   <dl>
     <dt class="p mt-2 text-blue-600"><a href="docs/components/switch">Switch</a></dt>
     <dd class="ml-4">A pill shaped button, which switches between 'on' and 'off' states.</dd>

@@ -88,15 +88,12 @@
   .twelveui-list-none {
     list-style-type: none;
   }
-  .twelveui-justify-center {
-    justify-content: center;
-  }
 </style>
 
 {#if items.length > 0}
   <ul class={list_class}>
     {#each items as item}
-      <li class='twelveui-list-none twelveui-flex twelveui-justify-center'>
+      <li class='twelveui-list-none twelveui-flex'>
         <a class={item_class} href={item.href} rel={item.rel} target={item.target}>
           {item.text}
         </a>
