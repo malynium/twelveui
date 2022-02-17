@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-9f300695.js",
+    "file": "start-f267aa3a.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,6 +13,7 @@
       "src/routes/docs/__layout.svelte",
       "src/routes/docs/index.svelte",
       "src/routes/docs/components/navmenu.svelte",
+      "src/routes/docs/components/button.svelte",
       "src/routes/docs/components/switch.svelte",
       "src/routes/[slug].svelte"
     ]
@@ -73,6 +74,15 @@
   "src/routes/docs/components/navmenu.svelte": {
     "file": "pages/docs/components/navmenu.svelte-069b7525.js",
     "src": "src/routes/docs/components/navmenu.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-660772b2.js"
+    ]
+  },
+  "src/routes/docs/components/button.svelte": {
+    "file": "pages/docs/components/button.svelte-e24ac94b.js",
+    "src": "src/routes/docs/components/button.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
