@@ -6,7 +6,7 @@
 
 <header class="mx-4 md:mx-8 lg:mx-24 xl:mx-40 flex justify-between h-14">
   <div class="flex place-items-center">
-    <p class="text-3xl"><a href="/">twelveui</a></p>
+    <p class="text-3xl"><a href="/">Twelve UI</a></p>
   </div>
 
   <nav 
