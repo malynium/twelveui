@@ -36,8 +36,8 @@
     button.focus()
     document.documentElement.removeEventListener('click', closeMenuOnOuterClick)
   }
-  const closeMenuOnOuterClick = (e: PointerEvent) => {
-    if (!mobile_menu.contains(e.target as Node)) closeMenu()
+  const closeMenuOnOuterClick = (e) => {
+    if (!mobile_menu.contains(e.target)) closeMenu()
   }
   const toggleMenu = async () => {
     open = !open
@@ -53,24 +53,24 @@
     }
     dispatch('click')
   }
-  const handleNavigation = (e: KeyboardEvent) => {
-    const parent = (<HTMLElement>(<HTMLElement>e.target).parentNode)
+  const handleNavigation = (e) => {
+    const parent = e.target.parentNode
     switch (e.key) {
       case 'ArrowDown':
         if (parent.nextElementSibling) {
-          const nextItem = (parent.nextElementSibling.firstElementChild as HTMLElement)
+          const nextItem = (parent.nextElementSibling.firstElementChild)
           nextItem.focus()
         } else {
-          const firstItem = (parent.parentNode.firstChild.firstChild as HTMLElement)
+          const firstItem = (parent.parentNode.firstChild.firstChild)
           firstItem.focus()
         }
         break
       case 'ArrowUp':
         if (parent.previousElementSibling) {
-          const previousItem = (parent.previousElementSibling.firstChild as HTMLElement)
+          const previousItem = (parent.previousElementSibling.firstChild)
           previousItem.focus()
         } else {
-          const lastItem = (parent.parentNode.lastChild.firstChild as HTMLElement)
+          const lastItem = (parent.parentNode.lastChild.firstChild)
           lastItem.focus()
         }
         break
