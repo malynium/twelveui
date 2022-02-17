@@ -13,12 +13,6 @@
 <pre class="block p-4 bg-gray-700 text-white rounded-xl">
   # npm install twelveui
 </pre>
-<h2 class="mb-2 h3">Usage Example</h2>
-<pre class="block p-4 bg-gray-700 text-white rounded-xl overflow-auto">
-  &lt;script&gt;
-import &lbrace; NavMenu, MenuIcon &rbrace; from 'twelveui'  
-&lt;/script&gt;
-</pre>
 <h2 class="h3">Components</h2>
 <section>
   <h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Disclosure</h3>

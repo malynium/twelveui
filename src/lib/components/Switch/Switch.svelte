@@ -14,6 +14,7 @@
     top = 'twelveui-top-0.5',
     toggle: HTMLInputElement,
     translate = 'twelveui-translate-x-6'
+  ;
   
   export { className as class }
   export let 
@@ -30,9 +31,10 @@
     switcher_class = '!!twelveui-bg-black',
     switcher_off_class= '',
     switcher_on_class = '',
-    value: any;
+    value: any
+  ;
 
-  const space = / /ig;
+  const space = / /ig
   let id: string = label.replace(space, '_').toLowerCase()
 
   const Toggle = () => {
