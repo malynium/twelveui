@@ -4,7 +4,7 @@
 </script>
 
 <style>
-  :global(.twelveui-switch-ring > span) {
+  :global(#twelveui-switch) {
     --tw-ring-color: pink;
   }
 </style>

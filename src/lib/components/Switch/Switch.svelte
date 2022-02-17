@@ -5,16 +5,15 @@
   const dispatch = createEventDispatcher()
 
   let 
-    arias = [], 
     className = '', 
-    switchH = 'h-6',
-    switchW = 'w-12',
-    switcherH = 'h-5',
-    switcherW = 'w-5',
-    left = 'left-0.5',
-    top = 'top-0.5',
+    switchH = 'twelveui-h-6',
+    switchW = 'twelveui-w-12',
+    switcherH = 'twelveui-h-5',
+    switcherW = 'twelveui-w-5',
+    left = 'twelveui-left-0.5',
+    top = 'twelveui-top-0.5',
     toggle: HTMLInputElement,
-    translate = 'translate-x-6'
+    translate = 'twelveui-translate-x-6'
   
   export { className as class }
   export let 
@@ -31,7 +30,7 @@
     switcher_class = '!!twelveui-bg-black',
     switcher_off_class= '',
     switcher_on_class = '',
-    value: string;
+    value: any;
 
   const space = / /ig;
   let id: string = label.replace(space, '_').toLowerCase()
@@ -52,28 +51,28 @@
 
   switch (size) {
     case 'sm':
-      translate = 'translate-x-4'
-      switchH = 'h-4'
-      switchW = 'w-8'
-      switcherH = 'h-3'
-      switcherW = 'w-3'
+      translate = 'twelveui-translate-x-4'
+      switchH = 'twelveui-h-4'
+      switchW = 'twelveui-w-8'
+      switcherH = 'twelveui-h-3'
+      switcherW = 'twelveui-w-3'
       break;
     case 'lg':
-      translate = 'translate-x-8'
-      switchH = 'h-8'
-      switchW = 'w-16'
-      switcherH = 'h-7'
-      switcherW = 'w-7'
+      translate = 'twelveui-translate-x-8'
+      switchH = 'twelveui-h-8'
+      switchW = 'twelveui-w-16'
+      switcherH = 'twelveui-h-7'
+      switcherW = 'twelveui-w-7'
       break;
   }
-
-  arias['aria-checked'] = checked
 </script>
 
-<label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-switch-ring relative {className}">
+<label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-relative {className}">
   {label}
-  <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} {value} type="checkbox" role="switch" {id} {...arias} class="cursor-pointer h-full w-full absolute top-0 left-0 opacity-[.0001]" />
-  <span aria-hidden="true"
+  <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} {value} type="checkbox" role="switch" {id} aria-checked="{checked}" class="twelveui-switch-input twelveui-cursor-pointer twelveui-h-full twelveui-w-full twelveui-absolute twelveui-top-0 twelveui-left-0 twelveui-opacity-[.0001]" />
+  <span 
+    aria-hidden="true"
+    id="twelveui-switch"
     class="{switchW} {switchH} {bg_class} {checked ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {switch_class}">
     <span
       class="{switcherW} {switcherH} {top} {left} {switcher_class} {checked ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} transition ease-in-out duration-300 rounded-full absolute">
