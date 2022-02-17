@@ -34,12 +34,8 @@
     value: any
   ;
 
-  const space = / /ig
-  let id: string = label.replace(space, '_').toLowerCase()
-
   const Toggle = () => {
-    checked = !(toggle.getAttribute("aria-checked") === "true")
-    toggle.setAttribute("aria-checked", checked.toString())
+    checked = !checked
     checked ? toggle.checked = true : toggle.checked = false
     dispatch('click')
   }
@@ -71,7 +67,7 @@
 
 <label on:keyup|self={KeyUp} on:click|self={Toggle} class="twelveui-relative {className}">
   {label}
-  <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} {value} type="checkbox" role="switch" {id} aria-checked="{checked}" class="twelveui-switch-input twelveui-cursor-pointer twelveui-h-full twelveui-w-full twelveui-absolute twelveui-top-0 twelveui-left-0 twelveui-opacity-[.0001]" />
+  <input bind:this={toggle} on:keyup={KeyUp} on:click={Toggle} id="twelveui-switch-input" {value} type="checkbox" role="switch" class="twelveui-cursor-pointer twelveui-h-full twelveui-w-full twelveui-absolute twelveui-top-0 twelveui-left-0 twelveui-opacity-[.0001]" />
   <span 
     aria-hidden="true"
     id="twelveui-switch"
