@@ -73,9 +73,9 @@
   <span 
     aria-hidden="true"
     id="twelveui-switch"
-    class="{switchW} {switchH} {bg_class} {checked ? `${bg_on_class}` : `${bg_off_class}`} flex relative box-content border-2 border-gray-600 rounded-full outline-none {switch_class}">
+    class="{switchW} {switchH} {bg_class} {checked ? `${bg_on_class}` : `${bg_off_class}`} twelveui-flex twelveui-relative twelveui-box-content twelveui-border-2 twelveui-border-gray-600 twelveui-rounded-full twelveui-outline-none {switch_class}">
     <span
-      class="{switcherW} {switcherH} {top} {left} {switcher_class} {checked ? `${translate} ${switcher_on_class}` : `translate-x-0 ${switcher_off_class}`} transition ease-in-out duration-300 rounded-full absolute">
+      class="{switcherW} {switcherH} {top} {left} {switcher_class} {checked ? `${translate} ${switcher_on_class}` : `twelveui-translate-x-0 ${switcher_off_class}`} twelveui-transition twelveui-ease-in-out twelveui-duration-300 twelveui-rounded-full twelveui-absolute">
     </span>
   </span>
   {#if state_on || state_off}
