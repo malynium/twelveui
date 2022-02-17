@@ -7,15 +7,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>TwelveUI</title>
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-e23b58d1.css">
-	<link rel="stylesheet" href="/_app/assets/XIcon.svelte_svelte_type_style_lang-d1a4ea3d.css">
-	<link rel="stylesheet" href="/_app/assets/pages/docs/index.svelte-7bf2bf37.css">
-	<link rel="modulepreload" href="/_app/start-b4f80d1e.js">
-	<link rel="modulepreload" href="/_app/chunks/vendor-63b33291.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-5009b178.js">
-	<link rel="modulepreload" href="/_app/pages/docs/__layout.svelte-2fd4f4b4.js">
-	<link rel="modulepreload" href="/_app/pages/docs/index.svelte-4b0d2f38.js"><script type="module">
-		import { start } from "/_app/start-b4f80d1e.js";
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-dee8b5e0.css">
+	<link rel="stylesheet" href="/_app/assets/XIcon-4d7fe7db.css">
+	<link rel="stylesheet" href="/_app/assets/pages/docs/index.svelte-541589fc.css">
+	<link rel="modulepreload" href="/_app/start-9f300695.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-660772b2.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-2a7b5763.js">
+	<link rel="modulepreload" href="/_app/chunks/XIcon-8d4d7611.js">
+	<link rel="modulepreload" href="/_app/pages/docs/__layout.svelte-da9c8d0e.js">
+	<link rel="modulepreload" href="/_app/pages/docs/index.svelte-8396da6b.js"><script type="module">
+		import { start } from "/_app/start-9f300695.js";
 		start({
 			target: document.querySelector("#svelte"),
 			paths: {"base":"","assets":""},
@@ -27,9 +28,9 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-5009b178.js"),
-						import("/_app/pages/docs/__layout.svelte-2fd4f4b4.js"),
-						import("/_app/pages/docs/index.svelte-4b0d2f38.js")
+					import("/_app/pages/__layout.svelte-2a7b5763.js"),
+						import("/_app/pages/docs/__layout.svelte-da9c8d0e.js"),
+						import("/_app/pages/docs/index.svelte-8396da6b.js")
 				],
 				url: new URL("http://sveltekit-prerender/docs"),
 				params: {}
@@ -41,31 +42,34 @@
 		<div id="svelte">
 
 
-<header class="mx-4 md:mx-8 lg:mx-24 xl:mx-40 flex justify-between h-14"><div class="flex place-items-center"><p class="text-3xl"><a href="/">twelveui</a></p></div>
+<header class="mx-4 md:mx-8 lg:mx-24 xl:mx-40 flex justify-between h-14"><div class="flex place-items-center"><p class="text-3xl"><a href="/">Twelve UI</a></p></div>
 
-  <nav aria-label="Navigation Menu" class="flex place-items-center"><ul class="&lt;md:!hidden flex space-x-8 p-0 svelte-2ac3l1"><li class="twelveui-list-none twelveui-flex twelveui-justify-center svelte-2ac3l1"><a class="no-underline inline-block w-full h-full text-xl text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100 svelte-2ac3l1" href="/docs">Docs</a>
+  <nav aria-label="Navigation Menu" class="flex place-items-center"><ul class="&lt;md:!hidden flex space-x-8 p-0 svelte-rufx1f"><li class="twelveui-list-none twelveui-flex svelte-rufx1f"><a class="no-underline inline-block w-full h-full text-xl text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100 svelte-rufx1f" href="/docs">Docs</a>
       </li></ul>
 
-  <button aria-controls="mobile_menu" aria-haspopup="true" aria-expanded="false" class="border-0 bg-inherit md:hidden hover:cursor-pointer svelte-2ac3l1"><svg tabindex="-1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600 svelte-1lr9gbd" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="navigation menu icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+  <button aria-controls="mobile_menu" aria-haspopup="true" aria-expanded="false" class="border-0 bg-inherit md:hidden hover:cursor-pointer svelte-rufx1f"><svg tabindex="-1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600 svelte-1lr9gbd" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="navigation menu icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
   </nav></header>
 <main class="mx-4 md:max-w-screen-md"><h2 class="mb-2 h3">Installation</h2>
 <pre class="block p-4 bg-gray-700 text-white rounded-xl"># npm install twelveui
 </pre>
-<h2 class="mb-2 h3">Usage Example</h2>
-<pre class="block p-4 bg-gray-700 text-white rounded-xl overflow-auto">&lt;script&gt;
-import { NavMenu, MenuIcon } from &#39;twelveui&#39;  
-&lt;/script&gt;
-</pre>
 <h2 class="h3">Components</h2>
-<section><h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Disclosure</h3>
-  <dl><dt class="p mt-2 text-blue-600"><a href="docs/components/navmenu">NavMenu</a></dt><dd class="ml-4">A series of links, which are aligned horizontally by default. When you provide &quot;mobile&quot; classes, the menu collapses and is shown/hidden by icons. The default &quot;closed&quot; icon is a three-line hamburger. The default &quot;opened&quot; icon is an X.</dd></dl></section>
-<section><h3 class="p font-thin tracking-wider uppercase mt-5 text-gray-500">Input</h3>
-  <dl><dt class="p mt-2 text-blue-600"><a href="docs/components/switch">Switch</a></dt><dd class="ml-4">A pill shaped button, which switches between &#39;on&#39; and &#39;off&#39; states.</dd></dl>
-  <label class="twelveui-switch-ring relative w-[200px] box-content inline-flex space-x-3 items-center p-1 m-6 rounded-md outline-none text-gray-800 hover:m-[22px] hover:cursor-pointer hover:border-2 hover:bg-blue-200 hover:border-blue-500 focus:m-[22px] focus:border-2 focus:bg-blue-200 focus:border-blue-500">Cookies
-  <input value="cookies" type="checkbox" role="switch" id="cookies" aria-checked="false" class="cursor-pointer h-full w-full absolute top-0 left-0 opacity-[.0001]">
-  <span aria-hidden="true" class="w-12 h-6   flex relative box-content border-2 border-gray-600 rounded-full outline-none "><span class="w-5 h-5 top-0.5 left-0.5 !!twelveui-bg-black translate-x-0  transition ease-in-out duration-300 rounded-full absolute"></span></span>
-  <span aria-hidden="true" class="text-sm text-gray-700">Disabled</span></label>
-  <p class="ml-4 mb-8">Cookies are disabled</p></section></main>
+<section><dl><dt class="p mt-2 text-blue-600"><a href="docs/components/button">Button</a></dt><dd class="ml-4">It&#39;s a button! Pass in an `icon` prop, as a svelte component - along with classes via the `icon_class` prop.</dd></dl>
+  <button type="button" id="button" class="hover:cursor-pointer focus:outline-none focus:ring-2 inline-flex justify-between items-center button-md button-blue-600 rounded-lg m-6" name="button" value="">Hello There World
+    
+    <i class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-4 svelte-1lr9gbd" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></i></button></section>
+<section><dl><dt class="p mt-2 text-blue-600"><a href="docs/components/navmenu">NavMenu</a></dt><dd class="ml-4">A series of links, which are aligned horizontally by default. When you provide &quot;mobile&quot; classes, the menu collapses and is shown/hidden by icons. The default &quot;closed&quot; icon is a three-line hamburger. The default &quot;opened&quot; icon is an X.</dd></dl>
+  <nav aria-label="Navigation Menu" class="flex m-6"><ul class="&lt;md:!hidden flex space-x-8 p-0 svelte-rufx1f"><li class="twelveui-list-none twelveui-flex svelte-rufx1f"><a class="no-underline inline-block w-full h-full text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100 svelte-rufx1f" href="/docs">Docs</a>
+      </li><li class="twelveui-list-none twelveui-flex svelte-rufx1f"><a class="no-underline inline-block w-full h-full text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100 svelte-rufx1f" href="/docs">More Docs</a>
+      </li><li class="twelveui-list-none twelveui-flex svelte-rufx1f"><a class="no-underline inline-block w-full h-full text-gray-600 indent-2 md:text-center md:px-1 md:indent-0 hover:bg-gray-100 svelte-rufx1f" href="/docs">All Docs</a>
+      </li></ul>
+
+  <button aria-controls="docs_mobile_nav" aria-haspopup="true" aria-expanded="false" class="border-0 bg-inherit md:hidden hover:cursor-pointer svelte-rufx1f"><svg tabindex="-1" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600 svelte-1lr9gbd" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-label="navigation menu icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+  </nav></section>
+<section><dl><dt class="p mt-2 text-blue-600"><a href="docs/components/switch">Switch</a></dt><dd class="ml-4">A pill shaped button, which switches between &#39;on&#39; and &#39;off&#39; states.</dd></dl>
+  <label class="twelveui-relative w-[200px] box-content inline-flex space-x-3 items-center p-1 m-6 rounded-md outline-none text-gray-800 hover:m-[22px] hover:cursor-pointer hover:border-2 hover:bg-blue-200 hover:border-blue-500 focus:m-[22px] focus:border-2 focus:bg-blue-200 focus:border-blue-500">Cookies
+  <input id="twelveui-switch-input" value="cookies" type="checkbox" role="switch" class="twelveui-cursor-pointer twelveui-h-full twelveui-w-full twelveui-absolute twelveui-top-0 twelveui-left-0 twelveui-opacity-[.0001]">
+  <span aria-hidden="true" id="twelveui-switch" class="twelveui-w-12 twelveui-h-6   twelveui-flex twelveui-relative twelveui-box-content twelveui-border-2 twelveui-border-gray-600 twelveui-rounded-full twelveui-outline-none "><span class="twelveui-w-5 twelveui-h-5 twelveui-top-0.5 twelveui-left-0.5 !!twelveui-bg-black twelveui-translate-x-0  twelveui-transition twelveui-ease-in-out twelveui-duration-300 twelveui-rounded-full twelveui-absolute"></span></span>
+  <span aria-hidden="true" class="text-sm text-gray-700">Disabled</span></label></section></main>
 
 </div>
 	</body>
